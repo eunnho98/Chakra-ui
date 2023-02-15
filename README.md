@@ -113,3 +113,41 @@ export default Index;
 - props 객체를 선언하고 sx에 넘겨줄 수도 있는데, filter같은 inline에서 사용하지 못하는 css나 :hover같은 psuedo selector의 사용을 가능하게 해준다.
 
 ## Flex Components
+
+Chakra UI에서 자체적으로 제공하는 Flex Box Component가 존재한다.
+
+```typescript
+import {
+  Flex,
+  Heading,
+  Box,
+  Text,
+  Button,
+  Spacer,
+  HStack,
+} from '@chakra-ui/react';
+function Navbar() {
+  return (
+    <Flex as="nav" p="10px" alignItems="center">
+      <Heading as="h1">Chakra UI 연습</Heading>
+      {/* 위아래 두 엘리먼트 사이의 공백 생성 */}
+      <Spacer />
+
+      {/* 감싼곳애 gap='20px'을 적용 */}
+      <HStack spacing="20px">
+        <Box bg="gray.200" p="10px">
+          M
+        </Box>
+        <Text>mario@netninja.dev</Text>
+        <Button colorScheme="purple">Logout</Button>
+      </HStack>
+    </Flex>
+  );
+}
+
+export default Navbar;
+```
+
+- Spacer: 빈 div를 생성 (=공백)
+- HStack: 내부 자식 엘리먼트간 gap을 설정
+- colorScheme: 지정한 색으로 칠하고 유사한 색의 hover 이벤트도 제공, Box에도 해봤는데 안됨.
