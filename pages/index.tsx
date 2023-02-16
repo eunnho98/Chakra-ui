@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heading, Text, Container, Box } from '@chakra-ui/react';
+import Navbar from '@/components/Navbar';
 
 function Index() {
   const boxStyles = {
@@ -17,6 +18,7 @@ function Index() {
 
   return (
     <div>
+      <Navbar />
       <Container as="section" maxWidth="3xl">
         <Heading my="30px" p="10px">
           Chakra ui Compoents
